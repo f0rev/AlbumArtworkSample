@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="track"
+            type="com.feevx.ravan.albumartworksample.api.response.albumdetails.Track" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <com.victor.loading.rotate.RotateLoading
+            android:id="@+id/rotateloading"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            app:loading_color="@color/colorAccent"
+            app:loading_width="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/album_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/album_logo"
+                android:layout_width="192dp"
+                android:layout_height="192dp"
+                app:picture="@{track.artworkUrl100}" />
+
+            <TextView
+                android:id="@+id/copyright"
+                fontPath="fonts/SFThin.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/album_logo"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:text="@{track.copyright}"
+                android:textColor="#919297"
+                android:textSize="16sp"
+                tools:text="test text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_toEndOf="@id/album_logo"
+                android:layout_toRightOf="@id/album_logo"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/album_name"
+                    fontPath="fonts/SFThin.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{track.collectionName}"
+                    android:textColor="#FBD223"
+                    android:textSize="20sp"
+                    tools:text="test text" />
+
+                <TextView
+                    android:id="@+id/artist_name"
+                    fontPath="fonts/SFBold.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{track.artistName}"
+                    android:textColor="#e79804"
+                    android:textSize="18sp"
+                    tools:text="test text" />
+
+                <TextView
+                    android:id="@+id/release_date"
+                    fontPath="fonts/SFRegular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{track.releaseDate}"
+                    android:textColor="#D2D3D5"
+                    android:textSize="16sp"
+                    tools:text="test text" />
+
+                <TextView
+                    android:id="@+id/genre"
+                    fontPath="fonts/SFRegular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{track.primaryGenreName}"
+                    android:textColor="#D2D3D5"
+                    android:textSize="16sp"
+                    tools:text="test text" />
+
+                <TextView
+                    android:id="@+id/album_price"
+                    fontPath="fonts/SFRegular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{track.collectionPrice}"
+                    android:textColor="#D2D3D5"
+                    android:textSize="16sp"
+                    tools:text="test text" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/track_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/album_layout" />
+
+    </RelativeLayout>
+
+</layout>

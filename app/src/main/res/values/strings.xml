@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AlbumArtworkSample</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="start_text">Now let\'s get to searching</string>
+    <string name="no_albums">No albums</string>
+</resources>
